@@ -46,6 +46,6 @@ mvn test
 ```
 
 ## Author
-Seif Emadeldin Ahmed </n>
-QA / Software Testing Enthusiast <\n>
+Seif Emadeldin Ahmed<br>
+QA / Software Testing Enthusiast<br>
 Cairo, Egypt
