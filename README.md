@@ -8,3 +8,6 @@ Real defects found during testing Noon website.
 
 ## Automation
 Selenium framework using POM + TestNG to test login functionality.
+
+## API Testing
+Automated REST API test suite (Postman + Newman) for the Restful-Booker API, covering CRUD operations, token authentication, and negative/edge-case scenarios. Integrated with GitHub Actions for CI on every push. See [Api-Testing-Projects/Restful-Booker](./Api-Testing-Projects/Restful-Booker) for details.
