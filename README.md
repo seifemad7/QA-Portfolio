@@ -1,4 +1,4 @@
-https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg
+![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)
 # QA Portfolio
 
 ## Manual Testing
