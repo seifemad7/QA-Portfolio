@@ -1,3 +1,4 @@
+[![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml)
 # Test Cases — Restful-Booker API
 
 API under test: `https://restful-booker.herokuapp.com`
