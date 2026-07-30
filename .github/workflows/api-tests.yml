@@ -7,4 +7,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
       - run: npm install -g newman
-      - run: newman run Api-Testing-Projects/Restful-Booker/postman/Restful-Booker-API-Tests.postman_collection.json --env-var "baseUrl=https://restful-booker.herokuapp.com"
+      - run: newman run api-testing-projects/restful-booker/postman/Restful-Booker-API-Tests.postman_collection.json --env-var "baseUrl=https://restful-booker.herokuapp.com"
