@@ -5,7 +5,7 @@ Welcome to my software QA portfolio! Below you'll find direct links to the test 
 ---
 
 ## 🛒 1. Noon E-Commerce Testing (Manual + Automation)
-* 📄 **Manual Test Cases:** [View Test Cases (`.xlsx`)](./manual-testing/)
+* 📄 **Manual Test Cases:** [View Test Cases](./manual-testing/)
 * 🐛 **Bug Reports & Vulnerability Findings:** [View OTP Bug Report](./bug-reports/)
 * 🤖 **Selenium Automation Framework (POM + TestNG):** [View Automation Code](./automation/)
 
