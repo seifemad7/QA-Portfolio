@@ -13,4 +13,3 @@ Welcome to my software QA portfolio! Below you'll find direct links to the test 
 
 ## 🏨 2. Restful-Booker API Automation <br>![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)
 * ⚡ **Postman / Newman / GitHub Actions Suite:** [View API Project](./api-testing-projects/restful-booker/)
-   <br>![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)
