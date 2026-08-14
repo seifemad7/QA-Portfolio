@@ -1,7 +1,16 @@
-# QA Portfolio
+# 🛠️ QA & Software Testing Portfolio
 
-- **Manual Testing** — Test cases for e-commerce login and form validation. [View test cases](./manual-testing)
-- **Bug Reports** — Real defects found during testing the Noon website. [View reports](./bug-reports)
-- **Automation** — Selenium framework using POM + TestNG to test login functionality. [View project](./noon-login-automation-framework)
-- **API Testing** — Automated REST API test suite (Postman + Newman) for the Restful-Booker API, covering CRUD operations, token authentication, and negative/edge-case scenarios. Integrated with GitHub Actions for CI on every push.
-  [View project](./Api-Testing-Projects/Restful-Booker) <br>![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)
+Welcome to my software QA portfolio! Below you'll find direct links to the test artifacts and automation code for each project.
+
+---
+
+## 🛒 1. Noon E-Commerce Testing (Manual + Automation)
+* 📄 **Manual Test Cases:** [View Test Cases (`.xlsx`)](./manual-testing/)
+* 🐛 **Bug Reports & Vulnerability Findings:** [View OTP Bug Report](./bug-reports/)
+* 🤖 **Selenium Automation Framework (POM + TestNG):** [View Automation Code](./automation/)
+
+---
+
+## 🏨 2. Restful-Booker API Automation
+* ⚡ **Postman / Newman / GitHub Actions Suite:** [View API Project](./api-testing-projects/restful-booker/)
+   <br>![API Tests](https://github.com/seifemad7/QA-Portfolio/actions/workflows/api-tests.yml/badge.svg)
