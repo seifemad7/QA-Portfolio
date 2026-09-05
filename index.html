@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seif Emadeldin — Software QA & Security Engineer</title>
+<title>Seif Emadeldin — Software Tester & QA Engineer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +18,7 @@
     --muted: #8B949E;
     --accent: #238636;
     --accent-hover: #2EA043;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   * { box-sizing: border-box; }
@@ -69,8 +71,14 @@
   }
   .lang-toggle button.active { color: #FFF; background: var(--line); }
 
+  /* Mobile Nav Button */
+  .menu-btn {
+    display: none; border: 1px solid var(--line); background: var(--surface);
+    color: var(--text); padding: 6px 10px; border-radius: 6px; cursor: pointer;
+  }
+
   /* Section Spacing & Hierarchy */
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
   section:first-of-type { border-top: none; }
 
   h2 { font-size: 24px; font-weight: 700; margin: 0 0 24px; color: var(--text); letter-spacing: -0.01em; }
@@ -91,17 +99,17 @@
   .btn {
     display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px;
     border-radius: 6px; font-size: 14px; font-weight: 600;
-    border: 1px solid transparent; cursor: pointer; transition: all .15s ease;
+    border: 1px solid transparent; cursor: pointer; transition: all .2s ease;
   }
   .btn.primary { background: var(--accent); color: #FFF; }
-  .btn.primary:hover { background: var(--accent-hover); }
+  .btn.primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
   .btn.ghost { border-color: var(--line); background: var(--surface); color: var(--text); }
-  .btn.ghost:hover { border-color: var(--muted); background: var(--surface-hover); }
+  .btn.ghost:hover { border-color: var(--muted); background: var(--surface-hover); transform: translateY(-1px); }
 
   .hero-graphic {
     display: flex; justify-content: center; align-items: center;
     background: var(--surface); border: 1px solid var(--line);
-    border-radius: 12px; height: 220px;
+    border-radius: 12px; height: 220px; box-shadow: var(--shadow);
   }
 
   /* About */
@@ -110,7 +118,7 @@
   /* Education */
   .edu-card {
     border: 1px solid var(--line); background: var(--surface);
-    border-radius: 8px; padding: 20px 24px;
+    border-radius: 8px; padding: 20px 24px; box-shadow: var(--shadow);
   }
   .edu-card h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
   .edu-card .org { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
@@ -123,14 +131,18 @@
   .skill-tag {
     font-size: 13.5px; padding: 6px 12px; border-radius: 6px;
     border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    transition: border-color .15s ease;
   }
+  .skill-tag:hover { border-color: var(--muted); }
 
   /* Projects */
   .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .proj-card {
     border: 1px solid var(--line); background: var(--surface);
     border-radius: 8px; padding: 22px; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease; box-shadow: var(--shadow);
   }
+  .proj-card:hover { transform: translateY(-3px); border-color: var(--muted); }
   .proj-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
   .proj-card p { margin: 0 0 16px; font-size: 14px; color: var(--muted); flex-grow: 1; line-height: 1.55; }
   .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
@@ -138,14 +150,15 @@
     font-size: 12px; color: var(--muted); border: 1px solid var(--line);
     padding: 2px 8px; border-radius: 4px; background: var(--bg);
   }
-  .proj-card a.link { font-size: 13.5px; font-weight: 600; color: var(--text); }
-  .proj-card a.link:hover { color: var(--muted); }
+  .proj-card a.link { font-size: 13.5px; font-weight: 600; color: var(--text); transition: color .15s ease; }
+  .proj-card a.link:hover { color: var(--accent-hover); }
 
   /* Contact */
   .contact-block {
     border: 1px solid var(--line); background: var(--surface);
     border-radius: 8px; padding: 28px;
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    box-shadow: var(--shadow);
   }
   .contact-block h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
   .contact-block p { margin: 0; color: var(--muted); font-size: 14px; }
@@ -165,8 +178,15 @@
     .hero { grid-template-columns: 1fr; padding-top: 48px; }
     .hero-graphic { display: none; }
     .proj-grid { grid-template-columns: 1fr; }
-    nav.links { display: none; }
     .hero h1 { font-size: 32px; }
+    
+    .menu-btn { display: block; }
+    nav.links {
+      display: none; position: absolute; top: 60px; left: 0; right: 0;
+      background: var(--surface); border-bottom: 1px solid var(--line);
+      flex-direction: column; padding: 16px; gap: 16px;
+    }
+    nav.links.open { display: flex; }
   }
 </style>
 </head>
@@ -177,23 +197,25 @@
     <div class="brand" data-lang="ar">سيف عماد الدين</div>
     <div class="brand" data-lang="en">Seif Emadeldin</div>
 
-    <div style="display:flex; align-items:center; gap:24px;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <button class="menu-btn" onclick="toggleNav()" aria-label="Toggle Navigation">☰</button>
+      
       <div data-lang="ar">
-        <nav class="links">
-          <a href="#about">من أنا</a>
-          <a href="#skills">المهارات</a>
-          <a href="#projects">المشاريع</a>
-          <a href="#education">التعليم</a>
-          <a href="#contact">تواصل</a>
+        <nav class="links" id="nav-ar">
+          <a href="#about" onclick="closeNav()">من أنا</a>
+          <a href="#education" onclick="closeNav()">التعليم</a>
+          <a href="#skills" onclick="closeNav()">المهارات</a>
+          <a href="#projects" onclick="closeNav()">المشاريع</a>
+          <a href="#contact" onclick="closeNav()">تواصل</a>
         </nav>
       </div>
       <div data-lang="en">
-        <nav class="links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+        <nav class="links" id="nav-en">
+          <a href="#about" onclick="closeNav()">About</a>
+          <a href="#education" onclick="closeNav()">Education</a>
+          <a href="#skills" onclick="closeNav()">Skills</a>
+          <a href="#projects" onclick="closeNav()">Projects</a>
+          <a href="#contact" onclick="closeNav()">Contact</a>
         </nav>
       </div>
       
@@ -212,7 +234,7 @@
     <div>
       <div data-lang="ar">
         <h1>سيف عماد الدين</h1>
-        <div class="role">مهندس ضمان جودة البرمجيات واختبار الأنظمة</div>
+        <div class="role">مهندس اختبار البرمجيات وضمان الجودة</div>
         <p class="lede">
           أصمم وأنفذ استراتيجيات اختبار متكاملة تحمي أرباح الشركات وتمنع الخسائر المالية الناجمة عن ثغرات الإنتاج. أدمج بين أتمتة الاختبارات الشاملة، اختبار واجهات البرمجة (API Testing)، وتقييم الأمان المنطقي (Business Logic Testing) لاكتشاف العيوب الحرجة مبكرًا وحماية استثمار الشركة وسمعتها.
         </p>
@@ -223,7 +245,7 @@
       </div>
       <div data-lang="en">
         <h1>Seif Emadeldin</h1>
-        <div class="role">Software Quality Assurance & Systems Test Engineer</div>
+        <div class="role">Software Tester & Quality Assurance Engineer</div>
         <p class="lede">
           I design and execute rigorous test strategies that safeguard revenue and protect companies from costly production failures. Specializing in cross-platform test automation, robust API validation, and business logic vulnerability testing to eliminate high-risk defects before they impact customer trust or the bottom line.
         </p>
@@ -255,14 +277,34 @@
     <div data-lang="ar">
       <h2>عن عملي والقيمة التجارية</h2>
       <p class="about-text">
-        أنظر إلى البرمجيات من منظور تقني وتجاري في آن واحد. أركز على اكتشاف ثغرات منطق الأعمال والحالات الطرفية المعقدة (Edge Cases) التي قد تؤدي إلى خسائر مالية أو توقف الأنظمة التشغيلية. أمتلك إقامة سارية وقابلة للنقل في المملكة العربية السعودية (Iqama)، مما يتيح لي المرونة التامة للعمل الميداني والمباشرة الفورية داخل الشركات الإقليمية.
+        أنظر إلى البرمجيات من منظور تقني وتجاري في آن واحد. أركز على اكتشاف ثغرات منطق الأعمال والحالات الطرفية المعقدة (Edge Cases) التي قد تؤدي إلى خسائر مالية أو توقف الأنظمة التشغيلية. أمتلك إقامة سارية في المملكة العربية السعودية (Iqama)، مما يتيح لي المرونة التامة للعمل الميداني والمباشرة الفورية داخل الشركات الإقليمية.
       </p>
     </div>
     <div data-lang="en">
       <h2>About Me & Business Value</h2>
       <p class="about-text">
-        I look at software through both an engineering lens and a risk-mitigation framework. Fixing a critical bug in development costs a fraction of addressing a post-launch incident. My testing directly protects operational budgets by catching logic flaws and race conditions before they cause financial loss. I hold a valid Transferable Iqama in Saudi Arabia, allowing for seamless onboarding and immediate relocation for regional opportunities.
+        I look at software through both an engineering lens and a risk-mitigation framework. Fixing a critical bug in development costs a fraction of addressing a post-launch incident. My testing directly protects operational budgets by catching logic flaws and race conditions before they cause financial loss. I hold a valid Iqama in Saudi Arabia, allowing for seamless onboarding and immediate relocation for regional opportunities.
       </p>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education">
+    <div data-lang="ar">
+      <h2>التعليم والشواهد</h2>
+      <div class="edu-card">
+        <h3>بكالوريوس علوم الحاسب والمعلومات</h3>
+        <p class="org">جامعة عين شمس — كلية الحاسبات والمعلومات</p>
+        <p class="note">تخصص أكاديمي في هندسة البرمجيات، تحليلات الأنظمة، وهياكل البيانات.</p>
+      </div>
+    </div>
+    <div data-lang="en">
+      <h2>Education</h2>
+      <div class="edu-card">
+        <h3>B.Sc. in Computer and Information Sciences</h3>
+        <p class="org">Ain Shams University — Faculty of Computer and Information Sciences</p>
+        <p class="note">Focused on software engineering principles, system architecture, algorithms, and computing fundamentals.</p>
+      </div>
     </div>
   </section>
 
@@ -386,26 +428,6 @@
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section id="education">
-    <div data-lang="ar">
-      <h2>التعليم والشواهد</h2>
-      <div class="edu-card">
-        <h3>بكالوريوس علوم الحاسب والمعلومات</h3>
-        <p class="org">جامعة عين شمس — كلية الحاسبات والمعلومات</p>
-        <p class="note">تخصص أكاديمي في هندسة البرمجيات، تحليلات الأنظمة، وهياكل البيانات.</p>
-      </div>
-    </div>
-    <div data-lang="en">
-      <h2>Education</h2>
-      <div class="edu-card">
-        <h3>B.Sc. in Computer and Information Sciences</h3>
-        <p class="org">Ain Shams University — Faculty of Computer and Information Sciences</p>
-        <p class="note">Focused on software engineering principles, system architecture, algorithms, and computing fundamentals.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= CONTACT ================= -->
   <section id="contact">
     <div data-lang="ar">
@@ -441,7 +463,7 @@
 
 </div>
 
-<footer>Seif Emadeldin — 2026</footer>
+<footer>Seif Emadeldin — <span id="year"></span></footer>
 
 <script>
   function setLang(lang) {
@@ -451,8 +473,18 @@
     document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
+
+  function toggleNav() {
+    const currentLang = document.documentElement.lang;
+    const activeNav = document.getElementById(`nav-${currentLang}`);
+    activeNav.classList.toggle('open');
+  }
+
+  function closeNav() {
+    document.querySelectorAll('nav.links').forEach(nav => nav.classList.remove('open'));
+  }
   
-  // Set default language state to English on load
+  document.getElementById('year').textContent = new Date().getFullYear();
   setLang('en');
 </script>
 
